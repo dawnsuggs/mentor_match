@@ -1,5 +1,5 @@
 {
-<<<<<<< Updated upstream
+
   "name": "mern",
   "version": "1.0.0",
   "description": "",
@@ -24,8 +24,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.7"
-  }
-=======
+  },
+
   "name": "mentor_match",
   "version": "0.1.0",
   "private": true,
@@ -46,5 +46,5 @@
   "repository": "https://github.com/dawnsuggs/mentor_match.git",
   "author": "martha <martha.abrahamk@gmail.com>",
   "license": "MIT"
->>>>>>> Stashed changes
+  
 }

@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "name": "mern",
   "version": "1.0.0",
   "description": "",
@@ -24,4 +25,26 @@
     "express": "^4.15.4",
     "mongoose": "^4.11.7"
   }
+=======
+  "name": "mentor_match",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "init": "^0.1.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/dawnsuggs/mentor_match.git",
+  "author": "martha <martha.abrahamk@gmail.com>",
+  "license": "MIT"
+>>>>>>> Stashed changes
 }

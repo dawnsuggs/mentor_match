@@ -8,11 +8,17 @@ import { db } from '../../firebase';
 
 
 
+
 const SignUpPage = ({ history }) =>
+ 
   <div>
     <h1>SignUp</h1>
-    <SignUpForm history={history} />
+        <SignUpForm history={history} />
   </div>
+
+const updateByPropertyName = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
 
 const INITIAL_STATE = {
     firstname: '',
@@ -79,8 +85,13 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+
        <input
           value={this.state.firstname}
+
+        <input 
+          value={firstname}
+
           onChange={event => this.setState(updateByPropertyName('firstname', event.target.value))}
           type="text"
           placeholder="First Name"
@@ -109,24 +120,11 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        {/* <label>Image:</label>
-        {this.state.isUploading &&
-        <p>Progress: {this.state.progress}</p>
-        }
-        {this.state.avatarURL &&
-        <img src={this.state.avatarURL} />
-        }
-        <FileUploader
-        accept="image/*"
-        name="image"
-        randomizeFilename
-        storageRef={firebase.storage().ref('images')}
-        onUploadStart={this.handleUploadStart}
-        onUploadError={this.handleUploadError}
-        onUploadSuccess={this.handleUploadSuccess}
-        onProgress={this.handleProgress}
-        /> */}
+
         <button disabled={isInvalid} type="submit">
+
+        <button  disabled={isInvalid} type="submit">
+
           Sign Up
         </button>
 
@@ -138,13 +136,11 @@ class SignUpForm extends Component {
 }
 
 const SignUpLink = () =>
-  <p className="donthaveanaccount">
+  <p>
     Don't have an account?
     {' '}
    <Link to={routes.SIGN_UP}>Sign Up</Link>
-    
-      
-   </p>
+  </p>
 
 export default withRouter(SignUpPage);
 
@@ -152,3 +148,4 @@ export {
   SignUpForm,
   SignUpLink,
 };
+

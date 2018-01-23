@@ -1,9 +1,8 @@
+
 import React, { Component } from 'react';
 import FileUploader from 'react-firebase-file-uploader';
 import firebase from 'firebase';
 import {db} from '../../firebase';
-
-
 
 
 const updateByPropertyName = (propertyName, value) => () => ({
@@ -11,8 +10,11 @@ const updateByPropertyName = (propertyName, value) => () => ({
 });
 
 const INITIAL_STATE = {
+
   jobTitle: '',
-  employer: '',
+  employer: '', 
+  jobTitle: '',
+  empoyer: '',
   bio: '',
   avatar: '',
   yearsExp: '',
@@ -28,7 +30,8 @@ class EditProfileForm extends Component {
     super(props);
     this.state = { ...INITIAL_STATE };
   }
-
+    this.state = { ...INITIAL_STATE };
+  }
 
   handleUploadStart = () => this.setState({isUploading: true, progress: 0});
   handleProgress = (progress) => this.setState({progress});
@@ -42,9 +45,9 @@ class EditProfileForm extends Component {
   };
 
   onSubmit = (event) => {
-
     const {
         id, 
+    const { 
         jobTitle,
         employer,
         bio,
@@ -67,8 +70,8 @@ class EditProfileForm extends Component {
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
         this.setState({id: this.props.uid})
-
-
+        // history.push(routes.HOME);
+        console.log("here")
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error));
@@ -93,7 +96,6 @@ class EditProfileForm extends Component {
          } = this.state;
 
     return (
-
       <form onSubmit={this.onSubmit}>
         <input
           value={jobTitle}
@@ -124,14 +126,15 @@ class EditProfileForm extends Component {
           <input
             value="Web Developer"
             type="checkbox"
-            onChange={event => this.state.skills.push([this.state.value])} />
+            onChange={event => this.state.skills.push(this.state.value)} />
         </label>
+
         <label>
           Database Administrator
           <input
             value="Database Administrator"
             type="checkbox"
-            onChange={event => this.state.skills.push([this.state.value])} />
+            onChange={event => this.state.skills.push(this.state.value)} />
         </label>
         
         <label>Image:</label>
@@ -162,3 +165,4 @@ class EditProfileForm extends Component {
 }
 
 export default EditProfileForm;
+

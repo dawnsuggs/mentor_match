@@ -1,4 +1,78 @@
-.donthaveanaccount{
-	text-align: center;
-	align-content: center;
+
+
+body{
+ font-family: Catamaran;
+/*/* background-image: url("./city5.jpg");**/
+}
+
+.color{
+width:60%;
+margin:auto;
+display:block;
+border-radius: 10px;
+padding-right:100px;
+padding-left:100px;
+padding-top:20px;
+padding-bottom:20px;
+
+background-color: rgba(51, 135, 150,0.6);
+margin-top:10px;
+}
+
+.signUp{
+color:rgb(237, 237, 73);
+font-size:45px;
+text-align:center;
+
+}
+
+.signUpForm{
+margin:auto;
+padding:30px;
+border-radius:5px;
+
+}
+
+.stats{
+text-align:center;
+font-size:25px;
+color:#181c21;
+font-style: 
+}
+
+input{
+
+width:100%;
+border-radius: 2px;
+border-color: white;
+background-color:transparent;
+border-color:rgba(24, 28, 33,.5);
+margin-bottom:5px;
+font-color:white;
+
+}
+::placeholder {
+    color: white;
+    opacity: 1; 
+    padding-left:5px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding-left:5px;
+    color:white;
+}
+
+button{
+
+	border-radius: 5px;
+	border-color:rgb(237, 237, 73);
+	background-color:rgb(237, 237, 73);
+	color:#181c21;
+}
+
+.logo{
+height:100px;
+width:100px;
+>>>>>>> style
 }

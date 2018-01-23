@@ -3,12 +3,17 @@ import { Link } from 'react-router-dom';
 
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import Wrapper from "../Wrapper";
+import "./PasswordForget.css"
 
 const PasswordForgetPage = () =>
-  <div>
-    <h1>PasswordForget</h1>
+<Wrapper>
+  <div className = "color2">
+    <h1 className = "forget">Forget Password</h1>
+    <p className = "instruct">Just enter your email below and a reset code will be sent to you.</p>
     <PasswordForgetForm />
   </div>
+</Wrapper>
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,

@@ -2,15 +2,36 @@ import React, { Component } from 'react';
 import { 
     Link,
     withRouter, } from 'react-router-dom';
+import "./SignUp/SignUp.js";
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import { auth } from '../firebase';
+import * as routes from '../constants/routes';
+import "./SignUp/SignUp.css";
+import Wrapper from "./Wrapper";
 
 
 const SignUpPage = ({ history }) =>
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm history={history} />
+<Wrapper>
+  <div className = "color">
+    <div >
+      <div >
+        <img className = "logo" src = "./SignUp/logo.png" alt = "logo" />
+        <h1 className = "signUp">Sign-Up</h1>
+        <div>
+
+      <p className = "stats">"According to a poll conducted by LinkedIn in 2016, <em>eighty-five percent</em> of jobs are not advertised.
+      </p>
+      <p className = "stats">They are found through networking opportunities like Mentor Match."
+      </p>
+      </div>
+      <SignUpForm history={history} />
+      </div>
+
+    </div>
   </div>
+</Wrapper>
+
 
 const INITIAL_STATE = {
     username: '',
@@ -54,15 +75,20 @@ class SignUpForm extends Component {
 
   }
 
+
   render() {
+
     const isInvalid =
     this.state.passwordOne !== this.state.passwordTwo ||
     this.state.passwordOne === '' ||
     this.state.email === '' ||
     this.state.username === '';
 
+
     return (
+  <div className = "signUpForm">
       <form onSubmit={this.onSubmit}>
+
        <input
           value={this.state.username}
           onChange={event => this.setState(byPropKey('username', event.target.value))}
@@ -94,6 +120,7 @@ class SignUpForm extends Component {
         { this.state.error && <p>{this.state.error.message}</p> }
 
       </form>
+  </div>
     );
   }
 }

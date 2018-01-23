@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { 
     Link,
     withRouter, } from 'react-router-dom';
-import { auth } from '../firebase';
-import * as routes from '../constants/routes';
+import { auth } from '../../firebase';
+import * as routes from '../../constants/routes';
 
 
 const SignUpPage = ({ history }) =>
@@ -99,7 +99,7 @@ class SignUpForm extends Component {
 }
 
 const SignUpLink = () =>
-  <p>
+  <p >
     Don't have an account?
     {' '}
     <Link to={routes.SIGN_UP}>Sign Up</Link>

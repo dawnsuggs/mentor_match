@@ -1,0 +1,9 @@
+.Wrapper1{
+    background-image:url("../Images/Landing.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Catamaran;
+    -webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+}

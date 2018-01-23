@@ -1,0 +1,9 @@
+.Wrapper2{
+    background-image:url("../Images/SignIn.jpeg");
+    background-size: cover;
+    background-position: center;
+    font-family: Catamaran;
+    -webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+}

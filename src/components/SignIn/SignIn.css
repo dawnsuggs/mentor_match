@@ -1,0 +1,73 @@
+
+html{
+    height: 100%;
+}
+.navbar-default .navbar-brand {
+    color: black;
+}
+
+body{
+/*    background: url(https://images.unsplash.com/photo-1474770447574-779d47496484?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb);
+*/    background-size: cover;
+    background-position: center;
+    font-family: Catamaran;
+}
+.center{
+    text-align: center;
+    padding-top: 15%;
+    
+}
+h1{
+    font-size: 50px;
+}
+
+p{
+    color: white;
+    font-size: 21px;  
+}
+
+#login{
+    min-width: 250px;
+    background-color: rgba(255,255,255, 0.7);
+    text-align: center;
+    padding: 14px 14px 0;
+    overflow: hidden;
+}
+#login .logInButtons{
+    margin: 12px 0;
+}
+.btn-success{
+   color:#fff;
+    background-color: #3b599d;
+}
+.btn-success:hover{
+   color:#fff;
+    background-color: #3b599d;
+}
+input{
+    width: 400px;
+    padding: 12px;
+    border-style: outset;
+    border-radius: 5px;
+}
+.btn btn-info{
+    border-style: outset;
+    border-radius: 5px;
+}
+
+@media (max-width:768px){
+    h1{
+        background-color: #55acee;
+    }
+    h2{
+        background-color: #449d44;
+    }
+}
+@media (max-width:768px){
+    h1{
+        background-color: skyblue;
+        opacity: 0.8;
+    }
+  
+}
+

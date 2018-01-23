@@ -20,6 +20,7 @@ const INITIAL_STATE = {
   isUploading: false,
   progress: 0,
   avatarURL: '',
+  designation: '',
   error: null,
 };
 
@@ -52,6 +53,8 @@ class EditProfileForm extends Component {
         yearsExp,
         skills,
         avatarURL,
+        designation,
+
          } = this.state;
 
    db.updateUser(
@@ -63,6 +66,7 @@ class EditProfileForm extends Component {
     yearsExp,
     skills,
     avatarURL,
+    designation,
    )
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
@@ -77,6 +81,12 @@ class EditProfileForm extends Component {
 
     event.preventDefault();
   }
+
+
+
+  handleChange = event => {
+    console.log(event.target.value)
+  }
   
 
   render() {
@@ -89,6 +99,7 @@ class EditProfileForm extends Component {
         yearsExp,
         skills,
         avatarURL,
+        designation,
 
          } = this.state;
 
@@ -124,15 +135,21 @@ class EditProfileForm extends Component {
           <input
             value="Web Developer"
             type="checkbox"
-            onChange={event => this.state.skills.push([this.state.value])} />
+            onChange={event => this.state.skills.push(event.target.value)} />
         </label>
         <label>
           Database Administrator
           <input
             value="Database Administrator"
             type="checkbox"
-            onChange={event => this.state.skills.push([this.state.value])} />
+            onChange={event => this.state.skills.push(event.target.value)} />
         </label>
+        <select onChange={event => this.setState(updateByPropertyName('designation', event.target.value))}>
+        <option defaultValue value="none">Select if you want to be a Mentor or Mentee</option>
+          <option value="mentee">Mentee</option>
+          <option value="mentor">Mentor</option>
+        </select>
+        <br/>
         
         <label>Image:</label>
         {this.state.isUploading &&

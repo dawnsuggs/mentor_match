@@ -25,7 +25,7 @@ class HomePage extends Component {
 
   render() {
     const { users } = this.state;
-    console.log(this.user)
+   
 
 
     return (
@@ -45,7 +45,9 @@ const UserList = ({ users }) =>
     <p>(Saved on Sign Up in Firebase Database)</p>
 
     {Object.keys(users).map(key =>
-      <div key={key}>{users[key].firstname} {users[key].lastname}</div>
+      <div key={key}>{users[key].firstname} {users[key].lastname}
+      <br/>
+      {users[key].url}</div>
     )}
   </div>
 

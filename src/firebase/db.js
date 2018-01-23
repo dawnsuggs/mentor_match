@@ -21,6 +21,8 @@ export const updateUser = (
   url,
   yearsExp,
   skills,
+  avatarURL,
+  designation,
 ) =>
 db.ref(`users/${id}`).update({
 
@@ -30,6 +32,8 @@ db.ref(`users/${id}`).update({
   url,
   yearsExp,
   skills,
+  avatarURL,
+  designation,
 });
 
 // Other db APIs ...

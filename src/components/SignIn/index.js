@@ -5,21 +5,21 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
-import './SignIn.css';
-import "./hands.jpg"
+
+
 
 const SignInPage = ({ history }) =>
 
-  <div className = "backImage">
+ 
   <h1 className = "title1">Sign-In</h1>
   <div>
-    <h3 className = "title">The Perfect Match to Launch Your Tech Career</h3>
+    
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
   </div>
  
-</div>
+
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,

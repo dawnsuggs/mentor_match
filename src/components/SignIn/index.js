@@ -5,14 +5,21 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import './SignIn.css';
+import "./hands.jpg"
 
 const SignInPage = ({ history }) =>
+
+  <div className = "backImage">
+  <h1 className = "title1">Sign-In</h1>
   <div>
-    <h1>SignIn</h1>
+    <h3 className = "title">The Perfect Match to Launch Your Tech Career</h3>
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
   </div>
+ 
+</div>
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -65,14 +72,17 @@ class SignInForm extends Component {
       email === '';
 
     return (
+
       <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
+      <div class = "form-group">
+          <input class = "input"
+            value={email}
+            onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
+            type="text"
+            placeholder="Email Address"
         />
-        <input
+        </div>
+        <input class = "input"
           value={password}
           onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
           type="password"
@@ -84,6 +94,7 @@ class SignInForm extends Component {
 
         { error && <p>{error.message}</p> }
       </form>
+
     );
   }
 }

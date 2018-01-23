@@ -7,11 +7,14 @@ import {
 import { auth, db } from '../../firebase';
 import * as routes from '../../constants/routes';
 
+
 const SignUpPage = ({ history }) =>
+ 
   <div>
     <h1>SignUp</h1>
-    <SignUpForm history={history} />
+        <SignUpForm history={history} />
   </div>
+
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -87,7 +90,10 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+
+    
+    
+        <input 
           value={firstname}
           onChange={event => this.setState(updateByPropertyName('firstname', event.target.value))}
           type="text"
@@ -123,7 +129,7 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button  disabled={isInvalid} type="submit">
           Sign Up
         </button>
 
@@ -146,3 +152,4 @@ export {
   SignUpForm,
   SignUpLink,
 };
+

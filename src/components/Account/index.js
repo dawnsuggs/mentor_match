@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import withAuthorization from '../Session/withAuthorization';
+import EditProfileForm from '../EditProfile';
+
 
 const AccountPage = (props, { authUser }) =>
   <div>
     <h1>Account: {authUser.email}</h1>
     <PasswordForgetForm />
     <PasswordChangeForm />
+    <EditProfileForm />
   </div>
 
 AccountPage.contextTypes = {

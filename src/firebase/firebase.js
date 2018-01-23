@@ -1,14 +1,14 @@
 
 import * as firebase from 'firebase';
 
-  const config = {
-    apiKey: "AIzaSyDtm71m8EwzQ0VWhv4AEfGXqjSns3JPGP4",
-    authDomain: "mentormatch-e1900.firebaseapp.com",
-    databaseURL: "https://mentormatch-e1900.firebaseio.com",
-    projectId: "mentormatch-e1900",
-    storageBucket: "mentormatch-e1900.appspot.com",
-    messagingSenderId: "710751010585"
-  };
+const config = {
+  apiKey: "AIzaSyDR-HSyWa6rK53R9FRpmVK6izDiXLXQ-Pc",
+  authDomain: "mentormatch-a8b32.firebaseapp.com",
+  databaseURL: "https://mentormatch-a8b32.firebaseio.com",
+  projectId: "mentormatch-a8b32",
+  storageBucket: "mentormatch-a8b32.appspot.com",
+  messagingSenderId: "810684070609"
+};
   
   if (!firebase.apps.length) {
     firebase.initializeApp(config);
@@ -16,8 +16,10 @@ import * as firebase from 'firebase';
   
   const db = firebase.database();
   const auth = firebase.auth();
+  var storage = firebase.storage();
   
   export {
     db,
     auth,
+    storage,
   };

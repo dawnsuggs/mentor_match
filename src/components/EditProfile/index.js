@@ -3,14 +3,16 @@ import FileUploader from 'react-firebase-file-uploader';
 import firebase from 'firebase';
 import {db} from '../../firebase';
 
+
+
+
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
 });
 
 const INITIAL_STATE = {
-  
   jobTitle: '',
-  empoyer: '',
+  employer: '',
   bio: '',
   avatar: '',
   yearsExp: '',
@@ -24,9 +26,9 @@ const INITIAL_STATE = {
 class EditProfileForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = { ...INITIAL_STATE };
   }
+
 
   handleUploadStart = () => this.setState({isUploading: true, progress: 0});
   handleProgress = (progress) => this.setState({progress});
@@ -40,7 +42,9 @@ class EditProfileForm extends Component {
   };
 
   onSubmit = (event) => {
-    const { 
+
+    const {
+        id, 
         jobTitle,
         employer,
         bio,
@@ -51,6 +55,7 @@ class EditProfileForm extends Component {
          } = this.state;
 
    db.updateUser(
+    this.props.uid,
     jobTitle,
     employer,
     bio,
@@ -61,8 +66,9 @@ class EditProfileForm extends Component {
    )
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
-        // history.push(routes.HOME);
-        console.log("here")
+        this.setState({id: this.props.uid})
+
+
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error));
@@ -74,6 +80,7 @@ class EditProfileForm extends Component {
   
 
   render() {
+    console.log(this.props.uid)
     const { 
         jobTitle,
         employer,
@@ -86,6 +93,7 @@ class EditProfileForm extends Component {
          } = this.state;
 
     return (
+
       <form onSubmit={this.onSubmit}>
         <input
           value={jobTitle}
@@ -116,14 +124,14 @@ class EditProfileForm extends Component {
           <input
             value="Web Developer"
             type="checkbox"
-            onChange={event => this.state.skills.concat([this.state.value])} />
+            onChange={event => this.state.skills.push([this.state.value])} />
         </label>
         <label>
           Database Administrator
           <input
             value="Database Administrator"
             type="checkbox"
-            onChange={event => this.state.skills.concat([this.state.value])} />
+            onChange={event => this.state.skills.push([this.state.value])} />
         </label>
         
         <label>Image:</label>

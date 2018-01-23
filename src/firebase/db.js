@@ -18,22 +18,22 @@ export const updateUser = (
   jobTitle,
   employer,
   bio,
-  url,
+  avatar,
   yearsExp,
   skills,
   avatarURL,
-  designation,
-) =>
+  designation
+) => 
 db.ref(`users/${id}`).update({
 
   jobTitle,
   employer,
   bio,
-  url,
+  avatar,
   yearsExp,
   skills,
   avatarURL,
-  designation,
+  designation
 });
 
 // Other db APIs ...

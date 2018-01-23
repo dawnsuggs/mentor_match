@@ -43,7 +43,8 @@ class EditProfileForm extends Component {
   };
 
   onSubmit = (event) => {
-
+    event.preventDefault();
+    
     const {
         id, 
         jobTitle,
@@ -79,7 +80,6 @@ class EditProfileForm extends Component {
       });
     
 
-    event.preventDefault();
   }
 
 
@@ -144,10 +144,10 @@ class EditProfileForm extends Component {
             type="checkbox"
             onChange={event => this.state.skills.push(event.target.value)} />
         </label>
-        <select onChange={event => this.setState(updateByPropertyName('designation', event.target.value))}>
+        <select onChange={this.handleChange}>
         <option defaultValue value="none">Select if you want to be a Mentor or Mentee</option>
           <option value="mentee">Mentee</option>
-          <option value="mentor">Mentor</option>
+          <option value="mentee">Mentor</option>
         </select>
         <br/>
         

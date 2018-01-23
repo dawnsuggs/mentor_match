@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { auth } from '../../firebase';
@@ -9,15 +8,15 @@ import Footer from '../Footer/Footer';
 import Navbar from "../Navbar/Navbar";
 import "./SignIn.css";
 
-const SignInPage = ({ history }) =>
 
+
+const SignInPage = ({ history }) =>
   <div className="SignInPage">
- 
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
   </div>
-
+ 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
 });
@@ -56,24 +55,7 @@ class SignInForm extends Component {
 
     event.preventDefault();
   }
-  //  handleFormSubmit = event => {
-  //   // Preventing the default behavior of the form submit (which is to refresh the page)
-  //   event.preventDefault();
-  //   if (!this.state.email || !this.state.password) {
-  //     alert("Fill out your email address and password please!");
-    
-  //   } else {
-  //     alert(`Welcome Back ${this.state.name} `);
-  //   }
-
-  //   this.setState({
-  //     name: "",
-  //     email: "",
-  //     password: ""
-      
-  //   });
-  // };
-
+ 
   render() {
     const {
       email,
@@ -115,29 +97,29 @@ class SignInForm extends Component {
           placeholder="Email Address"
         />
         </div>
+
         <div>
-        <input
-          value={password}
-          onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        </div>
-        <br />
+       <input
+         value={password}
+         onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
+         type="password"
+         placeholder="Password"
+       />
+       </div>
+       <br />
         <button class="btn btn-success" disabled={isInvalid} type="submit">
             <i class="fa fa-sign-in" aria-hidden="true"> </i>
-          Sign In
+          Log In
         </button>
 
         { error && <p>{error.message}</p> }
       </form>
-      </div>
-      </div>
-      </div>
 
+      </div>
+      </div>
+      </div>
           <Footer />
       </div>
-
     );
   }
 }

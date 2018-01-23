@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {
-  Link,
-  withRouter,
-} from 'react-router-dom';
-
-import { auth, db } from '../../firebase';
+import { 
+    Link,
+    withRouter, } from 'react-router-dom';
+import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import { db } from '../../firebase';
+
+
 
 const SignUpPage = ({ history }) =>
   <div>
@@ -13,45 +14,44 @@ const SignUpPage = ({ history }) =>
     <SignUpForm history={history} />
   </div>
 
-const updateByPropertyName = (propertyName, value) => () => ({
-  [propertyName]: value,
-});
-
 const INITIAL_STATE = {
-  firstname: '',
-  lastname: '',
-  username: '',
-  email: '',
-  passwordOne: '',
-  passwordTwo: '',
-  error: null,
-};
+    firstname: '',
+    lastname: '',
+    email: '',
+    passwordOne: '',
+    passwordTwo: '',
+    error: null,
+  };
+
+  const updateByPropertyName = (propertyName, value) => () => ({
+    [propertyName]: value,
+  });
 
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = { ...INITIAL_STATE };
   }
 
   onSubmit = (event) => {
     const {
-      firstname,
-      lastname,
-      username,
-      email,
-      passwordOne,
-    } = this.state;
+        firstname,
+        lastname,
+        email,
+        passwordOne,
+      } = this.state;
+    
+      const {
+        history,
+      } = this.props;
 
-    const {
-      history,
-    } = this.props;
-
-    auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+      auth.doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-
+        console.log("yolo", authUser.uid, firstname, lastname, email);
         // Create a user in your own accessible Firebase Database too
-        db.doCreateUser(authUser.uid, firstname, lastname, username, email)
+        db.doCreateUser(authUser.uid, firstname,
+          lastname,
+          email)
           .then(() => {
             this.setState(() => ({ ...INITIAL_STATE }));
             history.push(routes.HOME);
@@ -66,68 +66,72 @@ class SignUpForm extends Component {
       });
 
     event.preventDefault();
+
   }
 
-  render() {
-    const {
-      firstname,
-      lastname,
-      username,
-      email,
-      passwordOne,
-      passwordTwo,
-      error,
-    } = this.state;
 
+
+  render() {
     const isInvalid =
-      passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      username === '' ||
-      email === '';
+    this.state.passwordOne !== this.state.passwordTwo ||
+    this.state.passwordOne === '' ||
+    this.state.email === '';
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={firstname}
+       <input
+          value={this.state.firstname}
           onChange={event => this.setState(updateByPropertyName('firstname', event.target.value))}
           type="text"
           placeholder="First Name"
         />
         <input
-          value={lastname}
+          value={this.state.lastname}
           onChange={event => this.setState(updateByPropertyName('lastname', event.target.value))}
           type="text"
           placeholder="Last Name"
-        />
+        />  
         <input
-          value={username}
-          onChange={event => this.setState(updateByPropertyName('username', event.target.value))}
-          type="text"
-          placeholder="User Name"
-        />
-        <input
-          value={email}
+          value={this.state.email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
         <input
-          value={passwordOne}
+          value={this.state.passwordOne}
           onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
           type="password"
           placeholder="Password"
         />
         <input
-          value={passwordTwo}
+          value={this.state.passwordTwo}
           onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
           type="password"
           placeholder="Confirm Password"
         />
+        {/* <label>Image:</label>
+        {this.state.isUploading &&
+        <p>Progress: {this.state.progress}</p>
+        }
+        {this.state.avatarURL &&
+        <img src={this.state.avatarURL} />
+        }
+        <FileUploader
+        accept="image/*"
+        name="image"
+        randomizeFilename
+        storageRef={firebase.storage().ref('images')}
+        onUploadStart={this.handleUploadStart}
+        onUploadError={this.handleUploadError}
+        onUploadSuccess={this.handleUploadSuccess}
+        onProgress={this.handleProgress}
+        /> */}
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>
 
-        { error && <p>{error.message}</p> }
+        { this.state.error && <p>{this.state.error.message}</p> }
+
       </form>
     );
   }

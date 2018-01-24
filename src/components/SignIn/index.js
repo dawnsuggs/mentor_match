@@ -7,6 +7,7 @@ import * as routes from '../../constants/routes';
 import Footer from '../Footer/Footer';
 import Navbar from "../Navbar/Navbar";
 import "./SignIn.css";
+import Wrapper from "../Wrapper/Wrapper";
 
 
 
@@ -68,58 +69,61 @@ class SignInForm extends Component {
       email === '';
 
     return (
-      <div>
-         <Navbar />
-         <div class="container center">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Mentor Match </h1> 
+<div>
+<Navbar />
+<Wrapper>
+  
+    <div className = "color3">
+   
+          <h1 className = "signIn">Sign-In</h1> 
+          <p>
+            {this.state.email} {this.state.password}
+          </p>
 
-        <p>
-          {this.state.email} {this.state.password}
-        </p>
       <form className="form" onSubmit={this.onSubmit}>
-      
-         <div>
-          <input
-            value={this.state.name}
-            name="name"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="First Name"
-          />
-          </div>
-          <div>
-        <input
-          value={email}
-          onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
+        <div>
+            <input
+              value={this.state.name}
+              name="name"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="First Name"
+            />
         </div>
 
         <div>
-       <input
-         value={password}
-         onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
-         type="password"
-         placeholder="Password"
-       />
+            <input
+              value={email}
+              onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
+              type="text"
+              placeholder="Email Address"
+            />
+        </div>
+
+        <div>
+           <input
+             value={password}
+             onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
+             type="password"
+             placeholder="Password"
+           />
        </div>
        <br />
+
         <button class="btn btn-success" disabled={isInvalid} type="submit">
             <i class="fa fa-sign-in" aria-hidden="true"> </i>
           Log In
         </button>
-
         { error && <p>{error.message}</p> }
       </form>
 
-      </div>
-      </div>
-      </div>
-          <Footer />
-      </div>
+    </div>  
+  
+
+</Wrapper>
+<Footer />
+</div>
+
     );
   }
 }

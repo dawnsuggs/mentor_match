@@ -8,7 +8,7 @@ import Wrapper from "../Wrapper/Wrapper";
 
 const LandingPage = () => (
  <div className="LandingPage">
-   <Navbar />
+  
    <Wrapper>
   <div class="container center">
     <div class="row">

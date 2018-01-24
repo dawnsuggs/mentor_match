@@ -24,6 +24,7 @@ import '../Wrapper1/Wrapper1';
 
 
 const App = () =>
+<div class = "navbar-wrapper">
   <Router>
     <div className="app">
       <Navigation />
@@ -36,5 +37,6 @@ const App = () =>
      
     </div>
   </Router>
+</div>
 
 export default withAuthentication(App);

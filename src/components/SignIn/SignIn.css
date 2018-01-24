@@ -7,8 +7,7 @@ html{
 }
 
 body{
-/*    background: url(https://images.unsplash.com/photo-1474770447574-779d47496484?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb);
-*/    background-size: cover;
+     background-size: cover;
     background-position: center;
     font-family: Catamaran;
 }
@@ -25,6 +24,27 @@ p{
     color: white;
     font-size: 21px;  
 }
+
+.color3{
+ width:60%;
+    margin:auto;
+    display:block;
+    border-radius: 10px;
+    padding-right:100px;
+    padding-left:100px;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: rgba(51, 135, 150,0.6);
+    margin-top:10px;
+}
+
+.signIn{
+    color:rgb(237, 237, 73);
+    font-size:45px;
+    text-align:center;
+}
+
+
 
 #login{
     min-width: 250px;

@@ -1,9 +1,11 @@
 .Wrapper1{
-    background-image:url("../Images/Landing.jpg");
+   background-image: url("./girl_tech.jpg");
     background-size: cover;
     background-position: center;
     font-family: Catamaran;
     -webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
+	opacity:.7;
+	padding:175px;
 }

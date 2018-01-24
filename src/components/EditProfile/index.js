@@ -3,9 +3,6 @@ import FileUploader from 'react-firebase-file-uploader';
 import firebase from 'firebase';
 import {db} from '../../firebase';
 
-
-
-
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
 });

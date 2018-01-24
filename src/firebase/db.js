@@ -13,6 +13,9 @@ export const doCreateUser = (id, firstname, lastname, email) =>
 export const onceGetUsers = () =>
   db.ref('users').once('value');
 
+export const getUser = (id) =>
+  db.ref(`users/${id}`).once('value');
+
 export const updateUser = (
   id,
   jobTitle,
@@ -20,7 +23,8 @@ export const updateUser = (
   bio,
   avatar,
   yearsExp,
-  skills,
+  webDeveloper,
+  databaseAdmin,
   avatarURL,
   designation
 ) => 
@@ -31,9 +35,13 @@ db.ref(`users/${id}`).update({
   bio,
   avatar,
   yearsExp,
-  skills,
+  webDeveloper,
+  databaseAdmin,
   avatarURL,
   designation
 });
 
-// Other db APIs ...
+export const getMatchedUsers = () =>
+db.ref('users').orderByChild('databaseAdmin').equalTo('Database Administrator').on("value");
+
+

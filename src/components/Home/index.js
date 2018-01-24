@@ -20,7 +20,7 @@ class HomePage extends Component {
       this.setState(() => ({ users: snapshot.val() }))
       
     );
-    
+ 
   }
 
   render() {
@@ -39,15 +39,28 @@ class HomePage extends Component {
   }
 }
 
+
+
 const UserList = ({ users }) =>
   <div>
     <h2>List of Usernames of Users</h2>
-    <p>(Saved on Sign Up in Firebase Database)</p>
-
+  
     {Object.keys(users).map(key =>
-      <div key={key}>{users[key].firstname} {users[key].lastname}
+    
+      <div key={key}> 
+      <img src={users[key].avatarURL} width={200} mode='fit' alt=''/> 
       <br/>
-      {users[key].url}</div>
+      <h1>{users[key].firstname} {users[key].lastname}</h1>
+      <br/>
+      Job Title: {users[key].jobTitle}
+      <br/>
+      Employer: {users[key].jobTitle}
+      <br/>
+      About Me:{users[key].bio}
+      <br/>
+      {users[key].skills}
+      <br/>
+      </div>
     )}
   </div>
 

@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import PasswordChangeForm from '../PasswordChange';
+// import MatchComponent from '../Match';
+// import PasswordChangeForm from '../PasswordChange';
 import withAuthorization from '../Session/withAuthorization';
 import EditProfileForm from '../EditProfile';
+import User from "../User";
 
 
 const AccountPage = (props, { authUser }) =>
 
   <div>
-    <h1>Account: {authUser.uid}</h1>
-    <PasswordChangeForm />
+    <h1>Account: {authUser.email}</h1>
+    {/* <PasswordChangeForm /> */}
+    <User uid={authUser.uid}/>
     <br/>
+    {/* <MatchComponent uid={authUser.uid} /> */}
+
     <EditProfileForm uid={authUser.uid}/>
   </div>
   

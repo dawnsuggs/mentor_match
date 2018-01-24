@@ -5,6 +5,7 @@ import { db } from '../../firebase';
 
 
 class HomePage extends Component {
+
   constructor(props) {
     super(props);
 

@@ -23,8 +23,7 @@ export const updateUser = (
   bio,
   avatar,
   yearsExp,
-  webDeveloper,
-  databaseAdmin,
+  skills,
   avatarURL,
   designation
 ) => 
@@ -35,13 +34,20 @@ db.ref(`users/${id}`).update({
   bio,
   avatar,
   yearsExp,
-  webDeveloper,
-  databaseAdmin,
+  skills,
   avatarURL,
   designation
 });
 
-export const getMatchedUsers = () =>
-db.ref('users').orderByChild('databaseAdmin').equalTo('Database Administrator').on("value");
+// db.ref("Users").once('value',function(s){
+//   var users = s.val()
+//   var newUsers = {}
+//   for(var key in users) {
+//       newUsers[key+'somekey'] = 2
+//   }
+//   fb.ref("Users").update(newUsers)
+// });
+// export const getMatchedUsers = () =>
+// db.ref('users').orderByChild('databaseAdmin').equalTo('Database Administrator').on("value");
 
 

@@ -16,8 +16,7 @@ const INITIAL_STATE = {
   bio: '',
   avatar: '',
   yearsExp: '',
-  webDeveloper: null,
-  databaseAdmin: null,
+  skills:[],
   isUploading: false,
   progress: 0,
   avatarURL: '',
@@ -46,19 +45,20 @@ class EditProfileForm extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     
-    const {
+    var {
         id, 
         jobTitle,
         employer,
         bio,
         avatar,
         yearsExp,
-        webDeveloper,
-        databaseAdmin,
+        skills,
         avatarURL,
         designation,
 
          } = this.state;
+
+ 
 
    db.updateUser(
     this.props.uid,
@@ -67,8 +67,7 @@ class EditProfileForm extends Component {
     bio,
     avatar,
     yearsExp,
-    webDeveloper,
-    databaseAdmin,
+    skills,
     avatarURL,
     designation,
    )
@@ -94,8 +93,7 @@ class EditProfileForm extends Component {
         bio,
         avatar,
         yearsExp,
-        webDeveloper,
-        databaseAdmin,
+        skills,
         avatarURL,
         designation,
 
@@ -133,14 +131,14 @@ class EditProfileForm extends Component {
           <input
             value="Web Developer"
             type="checkbox"
-            onClick={event => this.setState(updateByPropertyName('webDeveloper', event.target.value))}/>
+            onClick={event => this.state.skills.push(event.target.value)}/>
         </label>
         <label>
           Database Administrator
           <input
             value="Database Administrator"
             type="checkbox"
-            onClick={event => this.setState(updateByPropertyName('databaseAdmin', event.target.value))} />
+            onClick={event => this.state.skills.push(event.target.value)} />
         </label>
         <select onChange={this.handleChange}>
         <option defaultValue value="none">Select if you want to be a Mentor or Mentee</option>

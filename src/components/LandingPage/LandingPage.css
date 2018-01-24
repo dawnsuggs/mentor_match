@@ -1,36 +1,47 @@
-/*https://images.unsplash.com/photo-1468817739446-479f000a4c0f?auto=format&fit=crop&w=770&q=80%20770w*/
-
 * {
   box-sizing: border-box;
   margin: 0;
 }
-
 html{
     height: 100%;
 }
 .navbar-default .navbar-brand {
     color: black;
 }
-
-/*body{
-    background:url(https://images.unsplash.com/photo-1468817739446-479f000a4c0f?auto=format&fit=crop&w=770&q=80%20770w);
-    background-size: cover;
-    background-position: center;
-    font-family: Catamaran;
-}*/
-.center{
-    text-align: center;
-    padding-top: 15%;
+.title1{
+  margin:auto;
     
 }
-h1{
-    font-size: 50px;
+
+.btn-success{
+margin-left:20px;
+
+
 }
 
-p{
-    color: white;
-    font-size: 21px;  
+.appNameDiv{
+text-align:center;
+align-content: center;
+margin:auto;
+width:75%;
 }
+
+.appName{
+    font-size: 70px;
+    /*color: #181c21;*/
+    
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.theme{
+/*    color: #181c21;*/
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;  
+}
+
+
 
 #login{
     min-width: 250px;

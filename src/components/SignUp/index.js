@@ -5,14 +5,25 @@ import {
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
 import { db } from '../../firebase';
+import "./SignUp.css";
+import Wrapper from '../Wrapper'
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 
 
 const SignUpPage = ({ history }) =>
- 
-  <div>
-    <h1>SignUp</h1>
+<div>
+<div>
+
+ <Wrapper>
+  <div className = "color">
+    <h1 className = "signUp">SignUp</h1>
         <SignUpForm history={history} />
   </div>
+</Wrapper>
+</div>
+<Footer/>
+</div>
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -26,7 +37,6 @@ const INITIAL_STATE = {
     passwordTwo: '',
     error: null,
   };
-
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -70,8 +80,6 @@ class SignUpForm extends Component {
 
   }
 
-
-
   render() {
     const isInvalid =
     this.state.passwordOne !== this.state.passwordTwo ||
@@ -79,6 +87,8 @@ class SignUpForm extends Component {
     this.state.email === '';
 
     return (
+   
+    <div>
       <form onSubmit={this.onSubmit}>
        <input
           value={this.state.firstname}
@@ -118,7 +128,8 @@ class SignUpForm extends Component {
 
         { this.state.error && <p>{this.state.error.message}</p> }
 
-      </form>
+      </form> 
+      </div>
     );
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
+import Wrapper2 from '../Wrapper2';
 
 
 class HomePage extends Component {
@@ -30,12 +31,31 @@ class HomePage extends Component {
 
 
     return (
-      <div>
-        <h1>Home</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
-
+    
+<div>  
+<Wrapper2>
+<div className = "container">
+  <div className = "row">
+  
+  <div className = "myAccount">
+    <div className = "col-sm-6">
+          <h3>My Account</h3>
+          <p>The Home Page is accessible by every signed in user.</p>
+    </div>    
+  </div>
+    <div   className = "col-sm-6">
+      <div className = "userDiv">
         { !!users && <UserList users={users} /> }
-      </div>
+     </div>
+    </div>
+</div>
+</div>
+</Wrapper2>
+</div>
+
+
+
+
     );
   }
 }
@@ -64,6 +84,7 @@ const UserList = ({ users }) =>
       </div>
     )}
   </div>
+
 
 const authCondition = (authUser) => !!authUser;
 

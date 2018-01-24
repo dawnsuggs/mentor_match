@@ -2,6 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Footer from "../Footer/Footer";
+import Wrapper from "../Wrapper/"
 
 
 
@@ -25,8 +26,6 @@ const Navbar = () => (
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="active"><a href="http://localhost:3000/"> Home <span class="sr-only">(current)</span></a></li>
-
-              
             </ul>
          
             <div>
@@ -39,12 +38,13 @@ const Navbar = () => (
               
               </ul>
             </div>
+          
           </div>
         </div>
       
   </nav>
-
 </div>
+
 
   );
 export default Navbar;

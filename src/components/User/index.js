@@ -24,9 +24,10 @@ class User extends Component {
 
         
        db.getUser(this.state.id).then(snapshot =>{
-           console.log(snapshot.val())
        this.setState(() => ({ user: snapshot.val() }))
+
        }
+       
     );   
         
   

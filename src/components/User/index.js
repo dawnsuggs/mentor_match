@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {db} from "../../firebase";
+import "./user.css";
 
 
 
@@ -25,42 +26,46 @@ class User extends Component {
   
     componentDidMount() {
 
-        
+
+      console.log(this.state.id);  
        db.getUser(this.state.id).then(snapshot =>{
+
+        if(snapshot.val()){
        this.setState(() => ({ currentuser: snapshot.val() }))
+     }
+     else {
+        console.log("nope none found");
+     }
 
-       }
+       } 
+    ); 
 
-       
-    );   
-        
-  
     }
   
     render() {
       
-      const { currentuser } = this.state;
-    
-     
-  
-  
+      // const { currentuser } = this.state;
+      console.log(this.state);
+ 
       return (
       
-        <div>
-        <img src={currentuser.avatarURL} width={200} mode='fit' alt=''/> 
-        <br/>
-        <h2>{currentuser.firstname} {currentuser.lastname}</h2>
-        <br/>
-        <h1>
-        Job Title: </h1><p> {currentuser.jobTitle}</p>
-        <br/><h1>
-        Employer: </h1><p>{currentuser.employer}</p>
-        <br/><h1>
-        About Me:</h1><p>{currentuser.bio}</p>
-        <br/>
-        <i>{currentuser.skills}</i>
- 
+      <div className="outer2">
+        <img className="imgProfile2" src={this.state.currentuser.avatarURL}  alt=''/> 
+        <h3 className="Name3">{this.state.currentuser.firstname} {this.state.currentuser.lastname}</h3>
+        <h6 className="job2">Job Title: </h6>
+        <h6> {this.state.currentuser.jobTitle}</h6>
+        <h6 className="emp"> Employer: </h6>
+        <h6 className="employer3">{this.state.currentuser.employer}</h6>
+        <h6 className="tech3">Technologies:</h6><span/>
+        <h6 className="tech4">{this.state.currentuser.skills}</h6>
+
+        <div className="aboutMe2">
+        <h6 className="aboutBio"> About Me:</h6> 
+         <h6>{this.state.currentuser.bio}</h6>   
         </div>
+        
+        
+      </div>
       );
     }
   }

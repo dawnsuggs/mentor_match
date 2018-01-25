@@ -3,9 +3,7 @@ import User from "../User";
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
 import Wrapper2 from '../Wrapper2';
-
 import "./home.css";
-
 import firebase from "firebase";
 // import PropTypes from 'prop-types';
 
@@ -30,7 +28,8 @@ class HomePage extends Component {
 
   
   componentDidMount() {
-  
+
+    console.log(this.props);
 
     db.onceGetUsers().then(snapshot =>
       this.setState( () => (
@@ -40,6 +39,7 @@ class HomePage extends Component {
 
     );
     db.getUser(yup).then(snapshot =>{
+      console.log(snapshot);
       this.setState(() => ({ user: snapshot.val() }))
       console.log(snapshot.val())
       })
@@ -63,32 +63,25 @@ class HomePage extends Component {
     return (
     
 <div> 
-
 <Wrapper2>
 
 <h1 className="thisAccount">My Account</h1> 
 
-
-
 <div className = "container">
   <div className = "row">
-  {/* <User /> */}
-  
-  <div className = "myAccount">
-    <div className = "col-sm-6">
 
-          
-
-{/* <User /> */}
-
+    <div className = "col-sm-8">
+        <div className = "myAccount">
+          <User uid={this.state.userId}/>
+        </div>
     </div>    
-  </div>
-    <div   className = "col-sm-6">
-      <div className = "userDiv">
+     
+
+    <div   className = "col-sm-4">
         { !!users && <UserList users={users} /> }
-     </div>
     </div>
-</div>
+
+  </div>
 </div>
 </Wrapper2>
 </div>

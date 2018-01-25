@@ -8,9 +8,10 @@ import Wrapper2 from '../Wrapper2/Wrapper2';
 import './account.css';
 
 const AccountPage = (props, { authUser }) =>
+
 <div>
 	<Wrapper2>
-	  <div>
+	  <div className="accountForm">
       <User uid={authUser.uid}/>
 	  	<h6 className = "myAccountName">My Account Page</h6>
 	    <h6 ClassName = "accountPage">Account: {authUser.uid}</h6>

@@ -8,4 +8,21 @@
 	-o-background-size:cover;
 	opacity:.7;
 	padding:175px;
+
+	min-height:100%;
+	min-width:1024px;
+
+
+	width:100%;
+	height:auto;
+
+	  /*position:fixed;*/
+	top:0;
+	left:0;
+
+	padding-bottom:300px;
+	padding-top:100px
+
+
+
 }

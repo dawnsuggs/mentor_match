@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
-import ThreadDisplay from './ThreadDisplay/components/ThreadDisplay';
-
-import './App.css';
+import React from 'react';
 
 
-class App extends Component {
-   
+const Post = (props)=> (
+<div className="panel panel-default post-body">
+      <div className="panel-body">
+
+   		{ 
+   			props.postBody.map((postPart, id) => (
+   			<div> {postPart}</div>
+   		))
+   		}
+      </div>
+    </div>
+	);
+export default Post;
 
 
 
 
-  
-render() {
-  return(
-    <ThreadDisplay />
-  
-);
 
-}
-}
 
-export default App
+
+
+
+

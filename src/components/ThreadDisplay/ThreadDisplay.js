@@ -1,19 +1,19 @@
-import React, { Components} from 'react';
-import Post from '../../Post/components/Post';
-import PostEditor from '../../PostEditor/components/PostEditor';
+import React, { Component} from 'react';
+import Post from '../Post/Post';
+import PostEditor from '../PostEditor/PostEditor';
 
-class ThreadDisplay extends Components {
+class ThreadDisplay extends Component {
 constructor(props) {
     super(props);
-this.addPost = this.addPost.bind(this);
-
-
 
     this.state = {
       posts: [],
-     
+      }
 
-    }
+
+this.addPost = this.addPost.bind(this);
+
+    
   }
 
 
@@ -30,21 +30,16 @@ addPost(newPostBody){
 
 render (){
 	return(
-	  <div>
-         {
-        this.state.posts.map((postBody, id) => {
-              return(
-              <Post key={id} postBody={postBody} /> 
-              )  
-
-})
-        
-        
-   }    
-  
-<PostEditor addPost={this.addPost} />
+	  <div className = "panel panel-default">
+         
+      {this.props.posts.map(function(post) {
+        return (<div>{post}</div>)
+      })}           
+    
+ 
 </div>
-}
+
 );
+}
 }
 export default ThreadDisplay;

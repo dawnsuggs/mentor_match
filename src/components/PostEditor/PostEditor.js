@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style.css'
+// import '../style.css'
 class PostEditor extends Component{
 	constructor (props){
 		super(props);
@@ -8,8 +8,8 @@ class PostEditor extends Component{
 			newPostBody:''
 		};
 
-		this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind{this};
-		this.createPost = this.createPost.bind{this};
+		this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
+		this.createPost = this.createPost.bind(this);
 
 
 	}
@@ -22,9 +22,9 @@ handlePostEditorInputChange(ev) {
 }
 
 createPost(){
-	this.props.addPost{this.state.newPostBody};
+	this.props.addPost(this.state.newPostBody);
 	this.setState({
-		newPostBody: '';
+		newPostBody: ''
 	});
 
 }

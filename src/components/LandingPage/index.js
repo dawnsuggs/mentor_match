@@ -1,10 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import Navbar from '../Navbar/Navbar';
 import Footer from "../Footer/Footer";
 import Wrapper1 from "../Wrapper1/Wrapper1";
-
+import * as routes from "../../constants/routes";
 
 
 const LandingPage = () => (
@@ -15,16 +15,15 @@ const LandingPage = () => (
     <h1 className = "appName">Mentor Match </h1>
     <p className = "theme">Connecting You with Tech Professionals</p>
     
-	<button className="btn btn-success" type="submit">
-            <i className="fa fa-sign-in" aria-hidden="true"> </i>
-          Sign-Up
+ 	<button type="submit">
+          <Link to={routes.SIGN_UP}>Sign-Up</Link>
     </button>
 
-	<button className="btn btn-success" type="submit">
-            <i className="fa fa-sign-in" aria-hidden="true"> </i>
-            <a href="http://localhost:3000/signup"></a>
-          Log In
+    <button type="submit">           
+          <Link to={routes.SIGN_IN}>Log-In</Link>
+
     </button>
+
 
  
  </div> 
@@ -37,3 +36,12 @@ const LandingPage = () => (
 export default LandingPage;
 
 
+	
+
+    // <button type="submit">
+    //      Sign-Up
+    // </button>
+
+    //  <button type="submit">           
+    //      Sign-In
+    //  </button>

@@ -12,11 +12,16 @@ import Wrapper from "../Wrapper/Wrapper";
 
 
 const SignInPage = ({ history }) =>
+
+<div>
+<Wrapper>
   <div className="SignInPage">
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
   </div>
+</Wrapper>
+</div>
  
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -71,14 +76,12 @@ class SignInForm extends Component {
     return (
 <div>
 <Navbar />
-<Wrapper>
+
   
     <div className = "color3">
    
           <h1 className = "signIn">Sign-In</h1> 
-          <p>
-            {this.state.email} {this.state.password}
-          </p>
+          
 
       <form className="form" onSubmit={this.onSubmit}>
         <div>
@@ -120,7 +123,6 @@ class SignInForm extends Component {
     </div>  
   
 
-</Wrapper>
 <Footer />
 </div>
 

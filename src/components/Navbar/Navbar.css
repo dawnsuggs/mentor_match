@@ -1,4 +1,4 @@
-
+/*
 html{
     height: 100%;
 }
@@ -14,8 +14,10 @@ body{
 }
 body{
    /* padding: 21px;*/
-    color: #5a5a5a;
-}
+/*    color: #5a5a5a;
+}*/
+
+
 .navbar-wrapper{
     position: absolute;
     top: 0;

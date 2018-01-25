@@ -26,11 +26,11 @@ const Navbar = () => (
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li className="active"><a href="http://localhost:3000/"> Home <span className="sr-only">(current)</span></a></li>
+
             </ul>
-         
             <div>
-       
-              <ul className="nav navbar-nav navbar-right">
+
+                     <ul className="nav navbar-nav navbar-right">
                
                   <li><a href="http://localhost:3000/signup"><i className="fa fa-user-plus" aria-hidden="true"></i>Sign Up</a></li>
                   <li><a href="http://localhost:3000/signin">
@@ -40,10 +40,8 @@ const Navbar = () => (
               
               </ul>
             </div>
-          
           </div>
-        </div>
-      
+    </div>      
   </nav>
 </div>
 

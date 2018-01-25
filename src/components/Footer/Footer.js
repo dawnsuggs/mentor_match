@@ -4,7 +4,7 @@ import "./Footer.css";
 
 const Footer = () =>(
 
-    <div class="footer">
+    <div className="footer">
 		Mentor Match © 2018
     </div>
 );

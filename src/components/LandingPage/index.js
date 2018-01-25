@@ -15,13 +15,13 @@ const LandingPage = () => (
     <h1 className = "appName">Mentor Match </h1>
     <p className = "theme">Connecting You with Tech Professionals</p>
     
-	<button class="btn btn-success" type="submit">
-            <i class="fa fa-sign-in" aria-hidden="true"> </i>
+	<button className="btn btn-success" type="submit">
+            <i className="fa fa-sign-in" aria-hidden="true"> </i>
           Sign-Up
     </button>
 
-	<button class="btn btn-success" type="submit">
-            <i class="fa fa-sign-in" aria-hidden="true"> </i>
+	<button className="btn btn-success" type="submit">
+            <i className="fa fa-sign-in" aria-hidden="true"> </i>
             <a href="http://localhost:3000/signup"></a>
           Log In
     </button>

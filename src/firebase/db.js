@@ -39,6 +39,11 @@ db.ref(`users/${id}`).update({
   designation
 });
 
+// export const chat = () => {
+  
+// }
+
+
 // db.ref("Users").once('value',function(s){
 //   var users = s.val()
 //   var newUsers = {}

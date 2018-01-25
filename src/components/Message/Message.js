@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Post from '../Post/Post';
+import ThreadDisplay from '../ThreadDisplay/ThreadDisplay';
 import Navbar from "../Navbar/Navbar";
 import Footer from '../Footer/Footer';
 import './Message.css';
+import firebase from 'firebase';
+//import {db} from '../../firebase';
+
 // import './App.css';
 
 
@@ -15,8 +19,8 @@ this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
 
 
     this.state = {
-      posts: [],
-      newPostBody: '',
+      posts: ["hello"],
+      newPostBody: 'Hi',
 
     }
   }
@@ -45,15 +49,9 @@ render() {
       <div>
         <h1> In Box </h1>
       </div>
-         {
-        this.state.posts.map((postBody, id) => {
-              return(
-              <Post key={id} postBody={postBody} /> 
-              )  
-})
-        
-        
-   }    
+         <ThreadDisplay posts={this.state.posts} />
+   
+              
   
 <div className="panel panel-default post-editor">
     <div className="panel-body">

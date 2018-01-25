@@ -13,8 +13,11 @@ export const doCreateUser = (id, firstname, lastname, email) =>
 export const onceGetUsers = () =>
   db.ref('users').once('value');
 
-export const getUser = (id) =>
-  db.ref(`users/${id}`).once('value');
+export const getUser = (id) => {
+  console.log(id);
+ return db.ref(`users/${id}`).once('value');
+}
+  
 
 export const updateUser = (
   id,
@@ -38,6 +41,9 @@ db.ref(`users/${id}`).update({
   avatarURL,
   designation
 });
+
+export const getMatch = () =>
+db.ref('users').orderByChild('skills').equalTo('Web Developer').once("value");
 
 // db.ref("Users").once('value',function(s){
 //   var users = s.val()

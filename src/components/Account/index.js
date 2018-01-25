@@ -23,7 +23,8 @@ const AccountPage = (props, { authUser }) =>
 
   
 AccountPage.contextTypes = {
-  authUser: PropTypes.object,
+	authUser: PropTypes.object,
+	
 };
 
 const authCondition = (authUser) => !!authUser;

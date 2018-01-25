@@ -14,7 +14,7 @@ class User extends Component {
   
       this.state = {
         id: this.props.uid,
-        user: {},
+        currentuser: {},
       };
     
     }
@@ -23,9 +23,9 @@ class User extends Component {
     componentDidMount() {
 
         
-       db.getUser(this.state.id).then(snapshot =>{
-       this.setState(() => ({ user: snapshot.val() }))
-
+       db.getUser("QLwMtSoj8gcBx0CRO3ezMudTnap2").then(snapshot =>{
+       this.setState(() => ({ currentuser: snapshot.val() }))
+        
        }
        
     );   
@@ -34,28 +34,33 @@ class User extends Component {
     }
   
     render() {
-  
-      const { user } = this.state;
-
+      
+      const { currentuser } = this.state;
+      console.log(currentuser.avatarURL)
      
-        
+  
   
       return (
+      
         <div>
-          <h1></h1>
-          <p></p>
-  
+        <img src={currentuser.avatarURL} width={200} mode='fit' alt=''/> 
+        <br/>
+        <h2>{currentuser.firstname} {currentuser.lastname}</h2>
+        <br/>
+        <h1>
+        Job Title: </h1><p> {currentuser.jobTitle}</p>
+        <br/><h1>
+        Employer: </h1><p>{currentuser.employer}</p>
+        <br/><h1>
+        About Me:</h1><p>{currentuser.bio}</p>
+        <br/>
+        <i>{currentuser.skills}</i>
+ 
         </div>
       );
     }
   }
-
-
-
- 
-
-
-
+  
 
 
     export default User;

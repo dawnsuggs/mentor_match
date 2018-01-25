@@ -24,7 +24,7 @@ import '../Wrapper1/Wrapper1';
 
 
 const App = () =>
-<div class = "navbar-wrapper">
+<div className = "navbar-wrapper">
   <Router>
     <div className="app">
       <Navigation />
@@ -32,7 +32,7 @@ const App = () =>
       <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
       <Route exact path={routes.SIGN_IN} component={() => <SignInPage />} />
       <Route exact path={routes.PASSWORD_FORGET} component={() => <PasswordForgetPage />} />
-      <Route exact path={routes.HOME} component={() => <HomePage />} />
+      <Route exact path={routes.HOME} component={(props) => <HomePage />} />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
      
     </div>

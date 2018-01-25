@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 // import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
 
+var storage = JSON.stringify(localStorage)
+var res = storage.replace(/\W/g, )
+var now = res.split('undefined')
+var yup = now[20]
 
-
-
+console.log(yup);
 class MatchComponent extends Component {
   constructor(props) {
     super(props);
@@ -17,16 +20,7 @@ class MatchComponent extends Component {
   }
  
 
-  componentDidMount() {
 
-
-    db.getMatchedUsers().then(snapshot =>
-      this.setState(() => ({ matched: snapshot.val() }))
-      
-      
-    );
-
-  }
 
   render() {
 
@@ -37,8 +31,7 @@ class MatchComponent extends Component {
 
     return (
       <div>
-        <h1>Home</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
+      <button onclick="myFunction()">Click me</button>
 
       </div>
     );

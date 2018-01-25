@@ -6,33 +6,54 @@ import Wrapper2 from '../Wrapper2';
 import firebase from "firebase";
 // import PropTypes from 'prop-types';
 
-
+var storage = JSON.stringify(localStorage)
+var res = storage.replace(/\W/g, )
+var now = res.split('undefined')
+var yup = now[20]
 
 class HomePage extends Component {
+
   constructor(props) {
     super(props);
 
-
     this.state = {
-      users: {}
+      userId: yup,
+      users: {},
+      user: {}
     };
-  
+
   }
 
-
+  
   componentDidMount() {
-    db.onceGetUsers().then(snapshot =>
-      this.setState(() => ({ users: snapshot.val() }))
-      
-    );
- 
-  }
   
+
+    db.onceGetUsers().then(snapshot =>
+      this.setState( () => (
+        { users: snapshot.val(),
+         })
+      )
+
+    );
+    db.getUser(yup).then(snapshot =>{
+      this.setState(() => ({ user: snapshot.val() }))
+      console.log(snapshot.val())
+      })
+
+
+  }
+
+
 
   render() {
-    
     const { users } = this.state;
-   
+    const { user } = this.state;
+
+    
+    // for (var i = 0; i < users.length; i++){
+    //   if (usertype)
+
+    // }
 
 
     return (
@@ -46,7 +67,7 @@ class HomePage extends Component {
   
   <div className = "myAccount">
     <div className = "col-sm-6">
-<User />
+{/* <User /> */}
     </div>    
   </div>
     <div   className = "col-sm-6">

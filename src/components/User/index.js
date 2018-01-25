@@ -8,6 +8,9 @@ import {db} from "../../firebase";
 //   };
 // const id = this.props.uid;  
 
+
+
+
 class User extends Component {
     constructor(props) {
       super(props);
@@ -23,10 +26,11 @@ class User extends Component {
     componentDidMount() {
 
         
-       db.getUser("QLwMtSoj8gcBx0CRO3ezMudTnap2").then(snapshot =>{
+       db.getUser(this.state.id).then(snapshot =>{
        this.setState(() => ({ currentuser: snapshot.val() }))
-        
+
        }
+
        
     );   
         
@@ -36,7 +40,7 @@ class User extends Component {
     render() {
       
       const { currentuser } = this.state;
-      console.log(currentuser.avatarURL)
+    
      
   
   

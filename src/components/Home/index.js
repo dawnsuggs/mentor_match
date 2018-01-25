@@ -11,6 +11,8 @@ var res = storage.replace(/\W/g, )
 var now = res.split('undefined')
 var yup = now[20]
 
+
+
 class HomePage extends Component {
 
   constructor(props) {
@@ -19,7 +21,8 @@ class HomePage extends Component {
     this.state = {
       userId: yup,
       users: {},
-      user: {}
+      user: {},
+      // matches: [],
     };
 
   }
@@ -32,6 +35,7 @@ class HomePage extends Component {
       this.setState( () => (
         { users: snapshot.val(),
          })
+
       )
 
     );
@@ -42,18 +46,59 @@ class HomePage extends Component {
 
 
   }
+  
+
 
 
 
   render() {
+
+
     const { users } = this.state;
     const { user } = this.state;
 
-    
+    const theMatches = () =>{
+      for (var i  in users){
+      var usertype = user.designation 
+      if (usertype !== users[i].designation) {
+        for(var j = 0; j< users[i].skills.length; j++) {
+          for (var k = 0; user.skills.length; k++){
+            if (user.skills[k]===users[i].skills[j]) {
+              console.log("help me", users[i])
+            return user[i]
+          
+            }
+            else{
+              console.log("it went wrong here")
+            }
+          }
+        }
+        
+      }
+      else {
+        console.log("something went wrong")
+      }
+  
+    }
+}
     // for (var i = 0; i < users.length; i++){
-    //   if (usertype)
-
+    //   var usertype = user.designation 
+    //   if (usertype !== users[i].designation) {
+    //     for(var j = 0; j< users.skills.length; j++) {
+    //       for (var k = 0; user.skills.length; k++){
+    //         if (user.skills[k]===users[i].skills[j]) {
+    //           console.log("help me", user[i])
+    //         return user[i]
+          
+    //         }
+    //       }
+    //     }
+        
+    //   }
+  
     // }
+    theMatches()
+    console.log(users)
 
 
     return (
@@ -79,9 +124,6 @@ class HomePage extends Component {
 </div>
 </Wrapper2>
 </div>
-
-
-
 
     );
   }

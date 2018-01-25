@@ -5,6 +5,8 @@ import Navbar from "../Navbar/Navbar";
 import Footer from '../Footer/Footer';
 import './Message.css';
 import firebase from 'firebase';
+import Wrapper3 from '../Wrapper3/Wrapper3';
+import './Message';
 //import {db} from '../../firebase';
 
 // import './App.css';
@@ -16,11 +18,9 @@ class Message extends Component {
 this.addPost = this.addPost.bind(this);
 this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
 
-
-
     this.state = {
-      posts: ["hello"],
-      newPostBody: 'Hi',
+      posts: [],
+      newPostBody: '',
 
     }
   }
@@ -38,29 +38,33 @@ handlePostEditorInputChange(ev) {
     newPostBody: ev.target.value
   })
 }
-
-
-  
+ 
 render() {
   return(
-
-    <div> 
+    <Wrapper3>
+    <div>
       <Navbar />
-      <div>
-        <h1> In Box </h1>
-      </div>
+          <div className="messageBox"> 
+     
+            <div>
+              <h1> In Box </h1>
+              <br />
+              <br />
+              <br />
+            </div>
          <ThreadDisplay posts={this.state.posts} />
    
-              
-  
 <div className="panel panel-default post-editor">
-    <div className="panel-body">
-      <textarea className="form-control post-editor-input" value= {this.state.newPostBody} onChange={this.handlePostEditorInputChange}/>
-      <button className="btn btn-success post-editor-button" onClick= {this.addPost}> Post </button>
-    </div>
+  <div className="panel-body">
+    <textarea className="form-control post-editor-input" value= {this.state.newPostBody} onChange={this.handlePostEditorInputChange}/>
+      <br />
+    <button className="btn btn-success post-editor-button" onClick= {this.addPost}> Post </button>
+  </div>
 </div>
-<Footer />
-</div>
+  <Footer />
+      </div>
+  </div>
+</Wrapper3>
 );
 
 }

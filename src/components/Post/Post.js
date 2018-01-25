@@ -13,6 +13,7 @@ class App extends Component {
    
 	constructor (props) {
 		super(props);
+		
 		// const config = 
 		// 	{
 		// 	  apiKey: "AIzaSyDR-HSyWa6rK53R9FRpmVK6izDiXLXQ-Pc",

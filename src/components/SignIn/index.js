@@ -14,13 +14,13 @@ import Wrapper from "../Wrapper/Wrapper";
 const SignInPage = ({ history }) =>
 
 <div>
-<Wrapper>
-  <div className="SignInPage">
-    <SignInForm history={history} />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
-</Wrapper>
+  <Wrapper>
+    <div className="SignInPage">
+      <SignInForm history={history} />
+      <PasswordForgetLink />
+      <SignUpLink />
+    </div>
+  </Wrapper>
 </div>
  
 const updateByPropertyName = (propertyName, value) => () => ({
@@ -50,7 +50,7 @@ class SignInForm extends Component {
       history,
     } = this.props;
 
-    auth.doSignInWithEmailAndPassword(email, password)
+  auth.doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
         history.push(routes.HOME);
@@ -59,7 +59,7 @@ class SignInForm extends Component {
         this.setState(updateByPropertyName('error', error));
       });
 
-    event.preventDefault();
+  event.preventDefault();
   }
  
   render() {
@@ -69,15 +69,15 @@ class SignInForm extends Component {
       error,
     } = this.state;
 
-    const isInvalid =
+  const isInvalid =
       password === '' ||
       email === '';
 
     return (
 <div>
+
 <Navbar />
 
-  
     <div className = "color3">
    
           <h1 className = "signIn">Sign-In</h1> 
@@ -118,11 +118,11 @@ class SignInForm extends Component {
           Log In
         </button>
         { error && <p>{error.message}</p> }
+
       </form>
 
     </div>  
   
-
 <Footer />
 </div>
 

@@ -2,6 +2,15 @@
   box-sizing: border-box;
   margin: 0;
 }
+.messageBox{
+  margin: auto;
+  align-content: center;
+  max-height: 21%;
+  height: 900px;
+  width: 710px;
+  padding-top: 300px;
+
+}
 
 .panel-body {
 	padding: 21px;
@@ -11,14 +20,41 @@
 	margin:auto;
 	display:block;
 	border-radius: 10px;
-	padding-right:100px;
-	padding-left:100px;
+  border-style: inset;
+	padding-right:10px;
+	padding-left:10px;
 	padding-top:20px;
 	padding-bottom:20px;
+   width: 700px;
+   height: 200px;
 
 }
+
+.textarea .form-control {
+    height: auto;
+    font-family: Catamaran;
+    size: 50px;
+    color: black;
+    font-style: italic;
+
+}
+.btn-success {
+  float: right;
+
+}
+.post-editor-input{
+  font-size: 30px;
+}
+
 h1{
 	padding-top: 150px;
+  margin-left: 100px;
+  font-weight: bolder;
+  color: #fffacd;
+  font-size: 90px;
+  
+
+
 }
 @media screen and (max-width: 980px;){
   .container{

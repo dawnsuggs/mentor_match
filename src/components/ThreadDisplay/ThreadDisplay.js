@@ -16,11 +16,6 @@ this.addPost = this.addPost.bind(this);
     
   }
 
-
-
-
-
-
 addPost(newPostBody){
  
   const newState = Object.assign({}, this.state);

@@ -14,7 +14,7 @@ const AccountPage = (props, { authUser }) =>
 	  <div className="accountForm">
       <User uid={authUser.uid}/>
 	  	<h6 className = "myAccountName">My Account Page</h6>
-	    <h6 ClassName = "accountPage">Account: {authUser.uid}</h6>
+	    <h6 ClassName = "accountPage">Account: {authUser.email}</h6>
 	    <PasswordChangeForm />
 	    <br/>
 	    <EditProfileForm uid={authUser.uid}/>
@@ -24,7 +24,8 @@ const AccountPage = (props, { authUser }) =>
 
   
 AccountPage.contextTypes = {
-  authUser: PropTypes.object,
+	authUser: PropTypes.object,
+	
 };
 
 const authCondition = (authUser) => !!authUser;

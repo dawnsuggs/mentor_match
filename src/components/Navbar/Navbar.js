@@ -8,30 +8,36 @@ import Wrapper from "../Wrapper/"
 
 const Navbar = () => (
 
-<div class="navbar-wrapper">
+<div className="navbar-wrapper">
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+  <nav className="navbar navbar-default">
+
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
             </button>
-              <a class="navbar-brand" href="http://localhost:3000/">Mentor Match</a>
-        </div>
+              <a className="navbar-brand" href="http://localhost:3000/">Mentor Match</a>
+          </div>
 
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="http://localhost:3000/"> Home <span class="sr-only">(current)</span></a></li>
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul className="nav navbar-nav">
+              <li className="active"><a href="http://localhost:3000/"> Home <span className="sr-only">(current)</span></a></li>
+
             </ul>
             <div>
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="http://localhost:3000/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign Up</a></li>
-                  
+
+                     <ul className="nav navbar-nav navbar-right">
+               
+                  <li><a href="http://localhost:3000/signup"><i className="fa fa-user-plus" aria-hidden="true"></i>Sign Up</a></li>
                   <li><a href="http://localhost:3000/signin">
-                  <i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a></li>
+                  <i className="fa fa-sign-in" aria-hidden="true"></i> Log In</a></li>
+                  <li><a href="http://localhost:3000/message"><i class="fa fa-inbox" aria-hidden="true"></i>In Box </a></li>
+
+              
               </ul>
             </div>
           </div>

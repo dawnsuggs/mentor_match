@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-
+import User from "../User";
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
 import Wrapper2 from '../Wrapper2';
+
 import "./home.css";
 
+import firebase from "firebase";
+// import PropTypes from 'prop-types';
+
+
+var storage = JSON.stringify(localStorage)
+var res = storage.replace(/\W/g, )
+var now = res.split('undefined')
+var yup = now[20]
 
 class HomePage extends Component {
 
@@ -12,25 +21,43 @@ class HomePage extends Component {
     super(props);
 
     this.state = {
-
-      // userId:yup,
-      users: {}
+      userId: yup,
+      users: {},
+      user: {}
     };
-  
-  }
- 
 
-  componentDidMount() {
-    db.onceGetUsers().then(snapshot =>
-      this.setState(() => ({ users: snapshot.val() }))
-      
-    );
- 
   }
+
+  
+  componentDidMount() {
+  
+
+    db.onceGetUsers().then(snapshot =>
+      this.setState( () => (
+        { users: snapshot.val(),
+         })
+      )
+
+    );
+    db.getUser(yup).then(snapshot =>{
+      this.setState(() => ({ user: snapshot.val() }))
+      console.log(snapshot.val())
+      })
+
+
+  }
+
+
 
   render() {
     const { users } = this.state;
-   
+    const { user } = this.state;
+
+    
+    // for (var i = 0; i < users.length; i++){
+    //   if (usertype)
+
+    // }
 
 
     return (
@@ -38,13 +65,22 @@ class HomePage extends Component {
 <div> 
 
 <Wrapper2>
+
 <h1 className="thisAccount">My Account</h1> 
+
+
+
 <div className = "container">
   <div className = "row">
+  {/* <User /> */}
   
   <div className = "myAccount">
     <div className = "col-sm-6">
+
           
+
+{/* <User /> */}
+
     </div>    
   </div>
     <div   className = "col-sm-6">

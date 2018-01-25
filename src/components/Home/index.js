@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
-
+import User from "../User";
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
 import Wrapper2 from '../Wrapper2';
 
+import "./home.css";
+
+import firebase from "firebase";
+// import PropTypes from 'prop-types';
+
+
+var storage = JSON.stringify(localStorage)
+var res = storage.replace(/\W/g, )
+var now = res.split('undefined')
+var yup = now[20]
 
 class HomePage extends Component {
 
@@ -11,36 +21,66 @@ class HomePage extends Component {
     super(props);
 
     this.state = {
-      users: {}
+      userId: yup,
+      users: {},
+      user: {}
     };
-  
-  }
- 
 
-  componentDidMount() {
-    db.onceGetUsers().then(snapshot =>
-      this.setState(() => ({ users: snapshot.val() }))
-      
-    );
- 
   }
+
+  
+  componentDidMount() {
+  
+
+    db.onceGetUsers().then(snapshot =>
+      this.setState( () => (
+        { users: snapshot.val(),
+         })
+      )
+
+    );
+    db.getUser(yup).then(snapshot =>{
+      this.setState(() => ({ user: snapshot.val() }))
+      console.log(snapshot.val())
+      })
+
+
+  }
+
+
 
   render() {
     const { users } = this.state;
-   
+    const { user } = this.state;
+
+    
+    // for (var i = 0; i < users.length; i++){
+    //   if (usertype)
+
+    // }
 
 
     return (
     
-<div>  
+<div> 
+
 <Wrapper2>
+
+<h1 className="thisAccount">My Account</h1> 
+
+
+
 <div className = "container">
   <div className = "row">
+  {/* <User /> */}
   
   <div className = "myAccount">
     <div className = "col-sm-6">
-          <h3>My Account</h3>
-          <p>The Home Page is accessible by every signed in user.</p>
+
+          
+
+{/* <User /> */}
+
     </div>    
   </div>
     <div   className = "col-sm-6">
@@ -54,8 +94,6 @@ class HomePage extends Component {
 </div>
 
 
-
-
     );
   }
 }
@@ -63,25 +101,24 @@ class HomePage extends Component {
 
 
 const UserList = ({ users }) =>
-  <div>
-    <h2>List of Usernames of Users</h2>
+  <div className="makePretty">
+    <h2 ClassName="matches">Professional Matches</h2>
   
     {Object.keys(users).map(key =>
     
-      <div key={key}> 
-      <img src={users[key].avatarURL} width={200} mode='fit' alt=''/> 
-      <br/>
-      <h1>{users[key].firstname} {users[key].lastname}</h1>
-      <br/>
-      Job Title: {users[key].jobTitle}
-      <br/>
-      Employer: {users[key].jobTitle}
-      <br/>
-      About Me:{users[key].bio}
-      <br/>
-      {users[key].skills}
-      <br/>
+    <div className="outer" key={key}> 
+
+      <img className="profileImage" src={users[key].avatarURL}  alt=''/>      
+      <h4 className="nameProfile">{users[key].firstname} {users[key].lastname}</h4>      
+      <h5 className="jobTitle">Job Title: {users[key].jobTitle}</h5>
+      <h6 className="employer">Employer: {users[key].jobTitle}</h6>
+      <h6 className="skills">{users[key].skills}</h6>
+      <div className="aboutMe">
+      <h4>About Me:</h4>{users[key].bio}
       </div>
+  </div>  
+      
+   
     )}
   </div>
 
@@ -89,3 +126,10 @@ const UserList = ({ users }) =>
 const authCondition = (authUser) => !!authUser;
 
 export default withAuthorization(authCondition)(HomePage);
+
+
+
+// var storage = JSON.stringify(localStorage)
+        // var res = storage.replace(/\W/g, )
+        // var now = res.split('undefined')
+        // var userID = now[20]

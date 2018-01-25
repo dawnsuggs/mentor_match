@@ -12,8 +12,9 @@ const AccountPage = (props, { authUser }) =>
 <div>
 	<Wrapper2>
 	  <div className="accountForm">
+	  <h6 className = "myAccountName">My Account Page</h6>
       <User uid={authUser.uid}/>
-	  	<h6 className = "myAccountName">My Account Page</h6>
+	  	
 	    <h6 ClassName = "accountPage">Account: {authUser.email}</h6>
 	    <PasswordChangeForm />
 	    <br/>

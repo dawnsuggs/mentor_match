@@ -2,6 +2,7 @@
 .thisAccount{
 color:white;
 text-shadow: 2px 2px 4px #000000;
+text-align: center;
 
 }
 
@@ -14,12 +15,13 @@ background-image: url();
 
 .outer{
 
-width:70%;
-height:300px;
+width:90%;
+/*height:300px;*/
 background-color:white;
 margin-bottom:5px;
 border-radius:5px;
 padding:10px;
+margin-left:0;
 }
 
 .aboutMe{
@@ -60,9 +62,3 @@ margin-top:-5px;
 }
 
 
-
-.matches{
-
-text-align:center;
-
-}

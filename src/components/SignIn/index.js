@@ -17,7 +17,7 @@ const SignInPage = ({ history }) =>
   <Wrapper>
     <div className="SignInPage">
       <SignInForm history={history} />
-      <PasswordForgetLink />
+      <div className="forgetCenter"><PasswordForgetLink /></div>
       <SignUpLink />
     </div>
   </Wrapper>

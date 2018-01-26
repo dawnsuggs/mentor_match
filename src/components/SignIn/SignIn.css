@@ -6,6 +6,10 @@ html{
     color: black;
 }
 
+.forgetCenter{
+    text-align: center;
+    /* padding-left: 40%; */
+}
 body{
      background-size: cover;
     background-position: center;
@@ -23,6 +27,7 @@ body{
 .noAccount{
     color: white;
     font-size: 21px;  
+    text-align: center;
 }
 
 .color3{
@@ -35,7 +40,7 @@ body{
     padding-top:20px;
     padding-bottom:20px;
     background-color: rgba(51, 135, 150,0.6);
-   /*margin-top:10px;*/
+  overflow: auto;
 }
 .signIn{
     color:rgb(237, 237, 73);

@@ -24,7 +24,7 @@ border-radius:10px;
 .imgProfile2{
 border-radius:10px;
 width:400px;
-height:300px;
+
 padding-left:10px;
 border-radius:10px;
 
@@ -50,12 +50,12 @@ margin-left:10px;
 }
 .aboutBio{
 font-size:20px;
-text-align:center;
+text-align:left;
 
 
 }
 
 .comment{
 
-	text-align:center;
+	text-align:left;
 }

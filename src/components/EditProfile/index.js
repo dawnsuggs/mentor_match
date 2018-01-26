@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FileUploader from 'react-firebase-file-uploader';
 import firebase from 'firebase';
 import {db} from '../../firebase';
+import "./editprofile.css";
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -123,6 +124,8 @@ class EditProfileForm extends Component {
           type="number"
           placeholder="Years of Professional Experience"
         />
+        <br/>
+        <div className="skills">
         <label>
           Web Developer
           <input
@@ -193,6 +196,7 @@ class EditProfileForm extends Component {
             type="checkbox"
             onClick={event => this.state.skills.push(event.target.value)} />
         </label>
+        </div>
         <select onChange={this.handleChange}>
         <option defaultValue value="none">Select if you want to be a Mentor or Mentee</option>
           <option value="mentee">Mentee</option>

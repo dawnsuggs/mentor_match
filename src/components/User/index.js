@@ -49,23 +49,32 @@ class User extends Component {
  
       return (
       
-      <div className="outer2">
-        <img className="imgProfile2" src={this.state.currentuser.avatarURL}  alt=''/> 
-        <h3 className="Name3">{this.state.currentuser.firstname} {this.state.currentuser.lastname}</h3>
-        <h6 className="job2">Job Title: </h6>
-        <h6> {this.state.currentuser.jobTitle}</h6>
-        <h6 className="emp"> Employer: </h6>
-        <h6 className="employer3">{this.state.currentuser.employer}</h6>
-        <h6 className="tech3">Technologies:</h6><span/>
-        <h6 className="tech4">{this.state.currentuser.skills}</h6>
+  <div>
+  <div className="accountDiv">
+        <h1 className="nameBrand">Terry Lewis</h1>
 
-        <div className="aboutMe2">
-        <h6 className="aboutBio"> About Me:</h6> 
-         <h6>{this.state.currentuser.bio}</h6>   
+        <h6 className="Name3">{this.state.currentuser.firstname} {this.state.currentuser.lastname}</h6>
+
+        <img className="imgProfile2" src={this.state.currentuser.avatarURL}  alt=''/> 
+   
+        <h6 className="job2"> {this.state.currentuser.jobTitle}</h6>
+  </div>
+
+  <div className="aboutMe2">
+        <h6 className="emp">Employer: {this.state.currentuser.employer}</h6>
+
+        <h6 className="emp">Technologies: {this.state.currentuser.skills}</h6>
+ 
+        <div >
+        <h6 className="aboutBio"> About Me</h6> 
+         <h6 className="comment">{this.state.currentuser.bio}</h6>  
+
         </div>
+   </div> 
+</div>
         
-        
-      </div>
+     
+    
       );
     }
   }

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import User from "../User";
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
-import Wrapper2 from '../Wrapper2';
+// import Wrapper2 from '../Wrapper2';
 import firebase from "firebase";
+import "./home.css";
 // import PropTypes from 'prop-types';
 
 var storage = JSON.stringify(localStorage)
@@ -98,26 +99,36 @@ class HomePage extends Component {
     return (
     
 <div>  
-<Wrapper2>
+
 
 <div className = "container">
-  <div className = "row">
-  {/* <User /> */}
-  
-  <div className = "myAccount">
-    <div className = "col-sm-6">
-{/* <User /> */}
-    </div>    
+
+
+<div  className = "row">
+
+  <div className  = "col-sm-12">
+  <div>
+  <User uid={this.state.userId}/>
   </div>
-    <div   className = "col-sm-6">
-      <div className = "userDiv">
-      
+
+  </div>
+
+</div>
+
+
+<div className="matched4">
+  <div className = "row">
+
+    <div   className = "col-sm-12">
         {<UserList matched={noDupes} />}
-     </div>
     </div>
+</div>    
+</div> 
+
+  
+ 
 </div>
-</div>
-</Wrapper2>
+
 </div>
 
     );
@@ -130,23 +141,25 @@ class HomePage extends Component {
 const UserList = ({ matched }) => 
 
   <div>
-    <h2>List of Usernames of matched</h2>
+    <h2>Your Professional Matches</h2>
 
     {Object.keys(matched).map(key =>
     
       <div key={key}> 
-      <img src={matched[key].avatarURL} width={200} mode='fit' alt=''/> 
-      <br/>
-      <h1>{matched[key].firstname} {matched[key].lastname}</h1>
-      <br/>
+      <img className="profileImage" src={matched[key].avatarURL}  alt=''/> 
+     
+      <h6 className=".jobtitle">{matched[key].firstname} {matched[key].lastname}</h6>
       Job Title: {matched[key].jobTitle}
-      <br/>
+      
       Employer: {matched[key].jobTitle}
-      <br/>
-      About Me:{matched[key].bio}
-      <br/>
-      {matched[key].skills}
-      <br/>
+
+
+      
+     <h6 className="tech">Technologies: {matched[key].skills} </h6>
+      <div className="about">
+      <h5 className="aboutMe2">About Me:</h5>
+      <p>{matched[key].bio}</p>
+     </div>
       </div>
     )}
   </div>

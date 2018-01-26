@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import User from "../User";
 import withAuthorization from '../Session/withAuthorization';
@@ -45,6 +44,7 @@ class HomePage extends Component {
         this.setState(() => ({ user: snapshot.val() }))
         console.log(snapshot.val())
         this.theMatches(users, user)
+
         })
 
     }
@@ -84,9 +84,13 @@ class HomePage extends Component {
 
   render() {
 
-
+   
+   
+    
     const { users } = this.state;
     const { user } = this.state;
+    const noDupes = Array.from(new Set(this.state.matched));
+      
 
 
 
@@ -107,7 +111,8 @@ class HomePage extends Component {
   </div>
     <div   className = "col-sm-6">
       <div className = "userDiv">
-        {<UserList matched={this.state.matched} />}
+      
+        {<UserList matched={noDupes} />}
      </div>
     </div>
 </div>
@@ -116,15 +121,17 @@ class HomePage extends Component {
 </div>
 
     );
+   
   }
+  
 }
 
 
+const UserList = ({ matched }) => 
 
-const UserList = ({ matched }) =>
   <div>
     <h2>List of Usernames of matched</h2>
-  
+
     {Object.keys(matched).map(key =>
     
       <div key={key}> 

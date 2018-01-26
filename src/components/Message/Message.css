@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+.messageBox{
+  margin: auto;
+  align-content: center;
+  max-height: 21%;
+  height: 900px;
+  width: 710px;
+  padding-top: 300px;
+
+}
+
+.panel-body {
+	padding: 21px;
+	border: 21px;
+	font-family: Catamaran;
+	width:60%;
+	margin:auto;
+	display:block;
+	border-radius: 10px;
+  border-style: inset;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:20px;
+	padding-bottom:20px;
+   width: 700px;
+   height: 200px;
+
+}
+
+.textarea .form-control {
+    height: auto;
+    font-family: Catamaran;
+    size: 50px;
+    color: black;
+    font-style: italic;
+
+}
+.btn-success {
+  float: right;
+
+}
+.post-editor-input{
+  font-size: 30px;
+}
+
+h1{
+	padding-top: 150px;
+  margin-left: 100px;
+  font-weight: bolder;
+  color: #fffacd;
+  font-size: 90px;
+  
+
+
+}
+@media screen and (max-width: 980px;){
+  .container{
+    width: 100px ;
+  }
+  .main-section{
+    width: 67.70%;
+  }
+  .sidebar{
+    width: 32.30%;
+  }
+  .auth-image{
+    width: 100%;
+  }
+
+}
+@media screen and (max-width: 768px;){
+  .main-section{
+    width: 67.70%;
+  }
+  .sidebar{
+    width: 32.30%;
+  }
+}
+@media screen and (max-width: 640px;){
+.container{
+    width: 640px ;
+}
+.work{
+  width: 640px;
+  }
+}
+@media screen and (max-width: 980px;){
+.main-container1{
+  width: 100%;
+}
+.main-section{
+  width: 100%;
+}
+}
+@media screen and (max-width: 640px;){
+.main-container1{
+    width: 640px ;
+
+    }
+}
+@media screen and (max-width: 640px;){
+img.picture{
+    max-width: 300px;
+}
+}

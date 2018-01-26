@@ -21,6 +21,9 @@ import "../SignIn/SignIn.css";
 import "../Navbar/Navbar.css";
 import "../Footer/Footer.css";
 import '../Wrapper1/Wrapper1';
+import Message from '../Message/Message';
+
+
 
 
 const App = () =>
@@ -34,6 +37,8 @@ const App = () =>
       <Route exact path={routes.PASSWORD_FORGET} component={() => <PasswordForgetPage />} />
       <Route exact path={routes.HOME} component={(props) => <HomePage />} />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
+      <Route exact path={routes.MESSAGE} component={() => <Message />} />
+
      
     </div>
   </Router>

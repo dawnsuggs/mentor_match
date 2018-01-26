@@ -1,3 +1,9 @@
+![](girl_tech.jpg =100x20) 
+Welcome to the Mentor Match App!  The Mentor Match App (https://mentor-match-app.herokuapp.com) provides a forum for up-and-coming developers and experienced tech professionals to meet and dialogue online.  Once matched, one-to-one chats are available to facilitate support of new developers in their efforts to effectively launch and maintain successful careers within the tech industry.  Veterans and experienced personnel are able to familiarize themselves with exciting new voices and emerging talent within the tech field.
+
+This app was authored and designed by a diverse group of new developers at UCLA extension: Veronica Williams, West Monnett, Martha Abraham and Dawn Suggs.  We recognize that mentor-mentee relationships within the tech industry benefit communities by increasing job placement opportunities locally and globally. We encourage diversity within the industry and strive to make it more representative of our multi-faceted world, as well as more equitable and dynamic as a whole.  We hope you enjoy your experience with the Mentor Match App and recommend it to your colleagues and friends.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

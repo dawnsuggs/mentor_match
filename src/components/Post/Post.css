@@ -1,0 +1,16 @@
+.post-body{
+    margin: 1em, 20%;
+}
+
+.post-editor {
+	align-content: center;
+}
+
+@media(max-width: 900px){
+
+  .post-body {
+    margin: 1em;
+    align-content: center;
+    height: 21px;
+  }
+}

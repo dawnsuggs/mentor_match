@@ -6,7 +6,7 @@ body{
 .color{
     position:relative;
     width:60%;
-  /*  margin:auto;*/
+    margin:auto;
    /* display:block;*/
     border-radius: 10px;
     padding-right:100px;
@@ -19,9 +19,13 @@ body{
 }
 
 .signUp{
-    color:rgb(237, 237, 73);
+      color:rgb(237, 237, 73);
     font-size:45px;
-    text-align:center;
+   /* text-align:center;*/
+   margin-top:0px;
+   padding-top:0px;
+   margin-right:0px;
+   margin-left:0px;
 }
 
 .signUpForm{

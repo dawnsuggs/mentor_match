@@ -4,23 +4,27 @@ import withAuthorization from '../Session/withAuthorization';
 import EditProfileForm from '../EditProfile';
 import User from "../User";
 import PasswordChangeForm from '../PasswordChange';
-import Wrapper2 from '../Wrapper2/Wrapper2';
+// import Wrapper2 from '../Wrapper2/Wrapper2';
 import './account.css';
 
 const AccountPage = (props, { authUser }) =>
 
 <div>
-	<Wrapper2>
+	
 	  <div className="accountForm">
+
 	  <h6 className = "myAccountName">My Account Page</h6>
       <User uid={authUser.uid}/>
 	  	
-	    <h6 ClassName = "accountPage">Account: {authUser.email}</h6>
-	    <PasswordChangeForm />
+	   <div className="scroll" className="aBackground"> 
 	    <br/>
 	    <EditProfileForm uid={authUser.uid}/>
+		<h6 ClassName = "accountPage">Account: {authUser.email}</h6>
+	    <PasswordChangeForm />
+	    </div>
+
 	  </div>
-	</Wrapper2>
+	
 </div>
 
   

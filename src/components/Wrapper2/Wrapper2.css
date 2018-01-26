@@ -1,6 +1,8 @@
 .Wrapper2{
   	
-  background: linear-gradient(to bottom right, #6bd4e0, #1bace5);
+  background-image: url("./computer2.jpg");
+  
+
   min-height:100%;
   min-width:1024px;
 
@@ -12,6 +14,8 @@
   top:0;
   left:0;
 
+padding-bottom:300px;
+/*padding-top:100px;*/
   
 /*  font-family: Catamaran;*/
   -webkit-background-size:cover;

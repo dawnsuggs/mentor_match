@@ -7,11 +7,11 @@ text-align: center;
 }
 
 
-.makePretty{
+/*.myAccount{
 
-background-image: url();
+background-image: url("./student1.jpg");
 
-}
+}*/
 
 .outer{
 
@@ -24,11 +24,7 @@ padding:10px;
 margin-left:0;
 }
 
-.aboutMe{
 
-
-
-}
 
 .profileImage{
 width:100px;
@@ -45,7 +41,9 @@ font-family:Catamaran;
 
 .jobTitle{
 
-
+font-size:15px;
+font-weight: bold;
+margin-right:10px;
 
 }
 
@@ -62,3 +60,30 @@ margin-top:-5px;
 }
 
 
+.matched4{
+
+background: linear-gradient(to bottom right, #6bd4e0, #1bace5);
+margin-bottom:10px;
+padding:5px;
+border-radius:5px;
+
+}
+
+
+.tech{
+
+
+
+}
+
+.about{
+
+
+
+}
+
+.aboutMe2{
+
+
+
+}

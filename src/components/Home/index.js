@@ -22,6 +22,7 @@ class HomePage extends Component {
       userId: yup,
       users: {},
       user: {},
+      matched: []
       // matches: [],
     };
 
@@ -31,22 +32,51 @@ class HomePage extends Component {
   componentDidMount() {
   
 
-    db.onceGetUsers().then(snapshot =>
+    db.onceGetUsers().then(snapshot =>{
+      var users = snapshot.val()
       this.setState( () => (
         { users: snapshot.val(),
          })
 
       )
+      db.getUser(yup).then(snapshot =>{
+        var user = snapshot.val()
+        this.setState(() => ({ user: snapshot.val() }))
+        console.log(snapshot.val())
+        this.theMatches(users, user)
+        })
 
+    }
     );
-    db.getUser(yup).then(snapshot =>{
-      this.setState(() => ({ user: snapshot.val() }))
-      console.log(snapshot.val())
-      })
+    
 
-
+      
   }
   
+  theMatches = (users, user) =>{
+    console.log("here I am", this.state.matched)
+    var array = this.state.matched
+    
+      for (var i  in users){
+      var usertype = user.designation 
+      if (usertype !== users[i].designation) {
+        for(var j = 0; j< users[i].skills.length; j++) {
+          for (var k = 0; k < user.skills.length; k++){
+            if (user.skills[k]===users[i].skills[j]) {
+              // if (users[i] === -1){
+                array.push(users[i])
+                this.setState({matched: array})
+              // }
+              
+            }
+
+          }
+        }
+        
+      }
+    
+    }
+    }
 
 
 
@@ -57,48 +87,7 @@ class HomePage extends Component {
     const { users } = this.state;
     const { user } = this.state;
 
-    const theMatches = () =>{
-      for (var i  in users){
-      var usertype = user.designation 
-      if (usertype !== users[i].designation) {
-        for(var j = 0; j< users[i].skills.length; j++) {
-          for (var k = 0; user.skills.length; k++){
-            if (user.skills[k]===users[i].skills[j]) {
-              console.log("help me", users[i])
-            return user[i]
-          
-            }
-            else{
-              console.log("it went wrong here")
-            }
-          }
-        }
-        
-      }
-      else {
-        console.log("something went wrong")
-      }
-  
-    }
-}
-    // for (var i = 0; i < users.length; i++){
-    //   var usertype = user.designation 
-    //   if (usertype !== users[i].designation) {
-    //     for(var j = 0; j< users.skills.length; j++) {
-    //       for (var k = 0; user.skills.length; k++){
-    //         if (user.skills[k]===users[i].skills[j]) {
-    //           console.log("help me", user[i])
-    //         return user[i]
-          
-    //         }
-    //       }
-    //     }
-        
-    //   }
-  
-    // }
-    theMatches()
-    console.log(users)
+
 
 
     return (
@@ -117,7 +106,7 @@ class HomePage extends Component {
   </div>
     <div   className = "col-sm-6">
       <div className = "userDiv">
-        { !!users && <UserList users={users} /> }
+        {<UserList matched={this.state.matched} />}
      </div>
     </div>
 </div>
@@ -131,24 +120,24 @@ class HomePage extends Component {
 
 
 
-const UserList = ({ users }) =>
+const UserList = ({ matched }) =>
   <div>
-    <h2>List of Usernames of Users</h2>
+    <h2>List of Usernames of matched</h2>
   
-    {Object.keys(users).map(key =>
+    {Object.keys(matched).map(key =>
     
       <div key={key}> 
-      <img src={users[key].avatarURL} width={200} mode='fit' alt=''/> 
+      <img src={matched[key].avatarURL} width={200} mode='fit' alt=''/> 
       <br/>
-      <h1>{users[key].firstname} {users[key].lastname}</h1>
+      <h1>{matched[key].firstname} {matched[key].lastname}</h1>
       <br/>
-      Job Title: {users[key].jobTitle}
+      Job Title: {matched[key].jobTitle}
       <br/>
-      Employer: {users[key].jobTitle}
+      Employer: {matched[key].jobTitle}
       <br/>
-      About Me:{users[key].bio}
+      About Me:{matched[key].bio}
       <br/>
-      {users[key].skills}
+      {matched[key].skills}
       <br/>
       </div>
     )}

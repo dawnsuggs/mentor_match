@@ -1,44 +1,30 @@
 import React, { Component } from 'react';
 
-// import withAuthorization from '../Session/withAuthorization';
-import { db } from '../../firebase';
 
-var storage = JSON.stringify(localStorage)
-var res = storage.replace(/\W/g, )
-var now = res.split('undefined')
-var yup = now[20]
-
-console.log(yup);
-class MatchComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      matched: {},
-    };
-  
+const theMatches = () =>{
+  for (var i  in users){
+  var usertype = user.designation 
+  if (usertype !== users[i].designation) {
+    for(var j = 0; j< users[i].skills.length; j++) {
+      for (var k = 0; user.skills.length; k++){
+        if (user.skills[k]===users[i].skills[j]) {
+          console.log("help me", users[i])
+        return user[i]
+      
+        }
+        else{
+          console.log("it went wrong here")
+        }
+      }
+    }
+    
   }
- 
-
-
-
-  render() {
-
-    const { users, currentUser } = this.state;
-    console.log(this.state)
-   
-
-
-    return (
-      <div>
-      <button onclick="myFunction()">Click me</button>
-
-      </div>
-    );
+  else {
+    console.log("something went wrong")
   }
+
 }
-
-
+}
 
 
 export default MatchComponent;

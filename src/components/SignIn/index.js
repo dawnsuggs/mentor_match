@@ -53,7 +53,7 @@ class SignInForm extends Component {
   auth.doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
-        history.push(routes.HOME);
+        history.push(routes.ACCOUNT);
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error));
@@ -84,15 +84,6 @@ class SignInForm extends Component {
           
 
       <form className="form" onSubmit={this.onSubmit}>
-        <div>
-            <input
-              value={this.state.name}
-              name="name"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="First Name"
-            />
-        </div>
 
         <div>
             <input

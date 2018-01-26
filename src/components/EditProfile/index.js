@@ -137,6 +137,62 @@ class EditProfileForm extends Component {
             type="checkbox"
             onClick={event => this.state.skills.push(event.target.value)} />
         </label>
+        <label>
+        Software Developer
+          <input
+            value="Software Developer"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)}/>
+        </label>
+        <label>
+        Information Security Analyst
+          <input
+            value="Information Security Analyst"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)} />
+        </label>
+        <label>
+        Network Architect
+          <input
+            value="Network Architect"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)}/>
+        </label>
+        <label>
+        Software Quality Assurance Analyst
+          <input
+            value="Software Quality Assurance Analyst"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)} />
+        </label>
+        <label>
+        .NET Developer
+          <input
+            value=".NET Developer"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)}/>
+        </label>
+        <label>
+        Cloud Architect
+          <input
+            value="Cloud Architect"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)} />
+        </label>
+        <label>
+        IT Manager
+          <input
+            value="Web Developer"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)}/>
+        </label>
+        <label>
+        Technical Operations Officer
+          <input
+            value="Technical Operations Officer"
+            type="checkbox"
+            onClick={event => this.state.skills.push(event.target.value)} />
+        </label>
         <select onChange={this.handleChange}>
         <option defaultValue value="none">Select if you want to be a Mentor or Mentee</option>
           <option value="mentee">Mentee</option>
